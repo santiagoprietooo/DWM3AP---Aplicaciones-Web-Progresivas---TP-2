@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="Images/tienda.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/e21be378af.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html"><img src="Images/tienda.png" alt="Inicio" width="50"></a>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="favoritos.html">Favoritos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>BUSCAR PRODUCTOS</h1>
+        <div class="buscar-inicio">        
+            <input type="text" id="buscarInput" placeholder="¿Qué estoy buscando?">
+            <button id="buscarButton"><img src="Images/lupa.png" alt="Buscar" width="30"></button>
+        </div>
+
+        <div id="productoModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div id="modalDetalles"></div>
+            </div>
+        </div>
+
+        <div id="mostrarProductos"></div>
+    </main>
+
+    <script src="JavaScript/main.js" defer></script>
+    <script src="JavaScript/sw.js" defer></script>
+</body>
+</html>
