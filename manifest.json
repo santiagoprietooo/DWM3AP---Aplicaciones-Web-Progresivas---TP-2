@@ -1,53 +1,56 @@
 {
     "name": "PWA-TP2-DWM3AP",
     "short_name": "PWA-TP2",
-    "theme-color": "rgb(255, 242, 0)",
-    "background-color": "rgb(255, 242, 0)",
-    "display": "minimal-ui",
-    "orientation": "portrait",
     "id": "/index.html",
     "start_url": "/index.html",
-    "description": "Aplicación que cumple la función de buscar productos a través de una API proveniente de 'DummyJSON'.",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background-color": "#ffff7c",
+    "theme-color": "#ffff7c",
     "icons": [
-      {
-        "src": "images/icons/icon-72x72.png",
-        "sizes": "72x72",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-96x96.png",
-        "sizes": "96x96",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-128x128.png",
-        "sizes": "128x128",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-144x144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-152x152.png",
-        "sizes": "152x152",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-384x384.png",
-        "sizes": "384x384",
-        "type": "image/png"
-      },
-      {
-        "src": "images/icons/icon-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
+        {
+          "src": "Images/icons/icon-72x72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-128x128.png",
+          "sizes": "128x128",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-144x144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-152x152.png",
+          "sizes": "152x152",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-384x384.png",
+          "sizes": "384x384",
+          "type": "image/png"
+        },
+        {
+          "src": "Images/icons/icon-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+    ],
+    "description": "Aplicación que cumple la función de ver y buscar productos a través de una API proveniente de 'DummyJSON'.",
+    "screenshots":[
+        {"src":"Images/screenshots/screenshot.png","type":"image/png","sizes":"720x410","form_factor":"wide"},{"src":"Images/screenshots/screenshot.png","type":"image/png","sizes":"720x410","form_factor":"narrow"}
     ]
 }
