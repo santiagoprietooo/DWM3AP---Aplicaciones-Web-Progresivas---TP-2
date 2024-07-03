@@ -1,3 +1,8 @@
+navigator.serviceWorker.register('/JavaScript/sw.js');
+if ('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/JavaScript/sw.js');
+};
+
 document.addEventListener('DOMContentLoaded', function(){
     const buscarInput = document.getElementById('buscarInput');
     const buscarButton = document.getElementById('buscarButton');
