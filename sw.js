@@ -5,7 +5,7 @@ const archivosApp = [
     '/CSS/styles.css',
     '/JavaScript/main.js',
     '/JavaScript/favoritos.js',
-    '/JavaScript/sw.js',
+    '/sw.js',
     '/Images/icons',
     '/Images/lupa.png',
     '/Images/tienda.png',
