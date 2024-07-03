@@ -1,6 +1,6 @@
 {
-    "name": "PWA-TP2-DWM3AP",
-    "short_name": "PWA-TP2",
+    "name": "DWM3AP | AWP - TP2",
+    "short_name": "AWP - TP2",
     "id": "/index.html",
     "start_url": "/index.html",
     "display": "standalone",

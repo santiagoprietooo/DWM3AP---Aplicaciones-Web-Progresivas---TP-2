@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h4>US$${producto.price}</h4>
 
                 <div class="botonesProduct">
-                    <button class="eliminarFavorito" data-id="${producto.id}"><strong>Eliminar de Favoritos</strong></button>
+                    <button class="eliminarFavorito" data-id="${producto.id}"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
             `;
             mostrarFavoritos.appendChild(productoDiv);

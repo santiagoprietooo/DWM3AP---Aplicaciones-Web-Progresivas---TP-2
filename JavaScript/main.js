@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function(){
             <img src="${producto.thumbnail}" alt="${producto.title}">
             <h3>${producto.title}</h3>
             <small>Categoría: <a href="#">${producto.category}</a></small>
+            <p><strong>Unidades disponibles: </strong>${producto.stock}</p>
             <hr>
-            <p>Unidades disponibles: ${producto.stock}</p>
             <h4>US$${producto.price}</h4>
 
             <div class="botonesProduct">
@@ -112,18 +112,17 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         .then(producto => {
             modalDetalles.innerHTML = `
-                <h2>${producto.title}</h2>
                 <img src="${producto.thumbnail}" alt="${producto.title}">
-                <p><strong>Descripción:</strong> ${producto.description}</p>
-                <p><strong>Categoría:</strong> ${producto.category}</p>
-                <p><strong>Unidades disponibles:</strong> ${producto.stock}</p>
-                <p><strong>Precio:</strong> US$${producto.price}</p>
+                <div class="modal-flex">
+                    <h2>${producto.title}</h2>
+                    <p><strong>Descripción:</strong> ${producto.description}</p>
+                    <p><strong>Categoría:</strong> ${producto.category}</p>
+                    <p><strong>Unidades disponibles:</strong> ${producto.stock}</p>
 
-                <div class="modalBotones">
-                    <button class="comprarBoton"><strong>Comprar</strong></button>
-                    <div>
+                    <div class="modal-final">
+                        <p style="font-size: 1.4rem;"><strong>Precio:</strong> <span style="color:green; font-weight:700;">US$${producto.price}</span></p>
                         <button class="agregarFavorito" data-id="${producto.id}"><i class="fa-solid fa-heart"></i></button>
-                    </div> 
+                    </div>
                 </div>
             `;
             productoModal.style.display = 'block';

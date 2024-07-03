@@ -11,7 +11,6 @@ body {
 
 li {
     list-style-type: none;
-    font-size: 25px;
 }
 
 a {
@@ -19,7 +18,7 @@ a {
 }
 
 h1 {
-    margin: 115px 0 0;
+    margin: 110px 0 15px;
     text-align: center;
 }
 
@@ -45,6 +44,10 @@ header div :last-child{
 header a {
     margin: 0 8px;
 }
+header li {
+    font-size: 25px;
+    font-weight: 700;
+}
 
 .buscar-inicio {
     text-align: center;
@@ -56,7 +59,7 @@ header a {
     padding: 16px 0 16px 15px;
     border: 2px solid transparent;
     font-size: 22px;
-    background-color: rgb(255, 213, 0);
+    background-color: rgb(255, 208, 0);
     border-radius: 8px;
     margin-right: 5px;
     width: 35%;
@@ -91,6 +94,21 @@ header a {
     }
 }
 
+#mostrarFavoritos {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 21% 21% 21% 21%;
+    gap: 55px 0;
+    margin: 10px 0;
+    padding: 55px 35px;
+}
+@media (max-width: 700px) {
+    #mostrarFavoritos {
+        grid-template-columns: 45% 45%;
+        grid-gap: 20px 20px;
+    }
+}
+
 .producto {
     display: flex;
     justify-content: space-between;
@@ -119,16 +137,25 @@ header a {
     transition: .3s ease;
     transform: translate(0, -15px);
 }
+.producto small {
+    font-size: 1rem;
+}
+.producto a {
+    color: red;
+}
 .producto p {
-    margin: 5px 0;
+    font-size: 1.2rem;
+    margin-top: .7rem;
 }
 .producto h3 {
     text-align: left;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
 }
 .producto h4 {
     text-align: center;
-    margin: 5px 0 10px;
+    margin: 10px 0;
+    font-size: 1.3rem;
+    color: green;
 }
 
 .botonesProduct {
@@ -139,12 +166,14 @@ header a {
 .detallesProducto {
     padding: 15px 45px;
     border: 1px solid rgb(158, 158, 158);
-    border-radius: 10px;
+    border-radius: 50px;
     transition: .2s ease-out;
     background-color: rgb(158, 158, 158);
     cursor: pointer;
     color: white;
     text-shadow: 0px 0px 3px black;
+    width: 75%;
+    font-size: 1rem;
 }
 .detallesProducto:hover {
     background-color: #F0F0F0;
@@ -155,7 +184,7 @@ header a {
 }
 
 .agregarFavorito {
-    padding: 15px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,6 +197,21 @@ header a {
     color: white;
 }
 
+.eliminarFavorito {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: rgb(0, 72, 189);
+}
+.eliminarFavorito i {
+    color: white;
+    font-size: 18px;
+}
+
 .modal {
     display: none; 
     position: fixed; 
@@ -178,46 +222,77 @@ header a {
     height: 100%; 
     overflow: auto; 
     background-color: rgba(0,0,0,0.4);
+    transition: .5 ease-in;
 }
   
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    width: 80%; 
+    display: flex;
+    background-color: rgb(255, 229, 60);
+    margin: 6rem auto; 
+    padding: 5px 30px 50px 15px;
+    width: 50%; 
     border-radius: 15px;
+}
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.modal-content img {
+    margin-right: 10px;
+    border-right: 2px solid black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .modal-content p {
     margin-bottom: 5px;
+    font-size: 1.2rem;
 }
 
-.modalBotones {
+#modalDetalles {
     display: flex;
-    justify-content: center;
-    margin: 20px auto 0;
+    flex-direction: row;
+    margin-top: 3rem;
+}
+
+.modal-flex {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
 }
   
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    color: black;
+    float: left;
+    font-size: 3rem;
     font-weight: bold;
+    height: max-content;
+    transition: .1s ease-out;
 }
   
 .close:hover,
 .close:focus {
-    color: black;
+    color: white;
+    text-shadow: 0 0 5px black;
     text-decoration: none;
     cursor: pointer;
+    transition: .1s ease-out;
 }
 
-.comprarBoton {
-    padding: 15px 45px;
-    border: 1px solid rgb(255, 170, 0);
-    border-radius: 10px;
-    transition: .2s ease-out;
-    background-color: rgb(255, 170, 0);
-    cursor: pointer;
-    color: black;
-    margin-right: 15px;
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(119, 113, 0);
+    padding: 30px;
+    width: 100%;
+    color: white;
+    font-size: 25px;
 }
