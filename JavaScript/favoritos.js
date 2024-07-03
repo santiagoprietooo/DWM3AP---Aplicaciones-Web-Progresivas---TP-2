@@ -6,11 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
         mostrarFavoritos.innerHTML = '';
 
-        // Filtrar productos con propiedades inválidas
         favoritos = favoritos.filter(producto => producto && producto.id && producto.title && producto.thumbnail && producto.price);
 
         if (favoritos.length === 0) {
-            mostrarFavoritos.innerHTML = '<p>No hay productos en favoritos.</p>';
+            mostrarFavoritos.innerHTML = '<p style="font-size: 30px; text-align: center; font-weight: 700;">No hay productos en favoritos.</p>';
             return;
         }
 
