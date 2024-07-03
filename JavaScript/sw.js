@@ -15,9 +15,6 @@ const archivosApp = [
 ];
 
 caches.open('productos-guardados');
-caches.delete('cache-contactos').then(res =>{
-    console.log(res);
-})
 caches.open('productos-guardados').then( cache =>{
     cache.addAll([
         '/',
