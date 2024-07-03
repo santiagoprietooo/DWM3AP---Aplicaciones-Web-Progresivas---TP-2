@@ -1,7 +1,12 @@
-navigator.serviceWorker.register('/JavaScript/sw.js');
-if ('serviceWorker' in navigator){
-    navigator.serviceWorker.register('/JavaScript/sw.js');
-};
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/JavaScript/sw.js')
+    .then(res => {
+        console.log('Service Worker registrado:', res);
+    })
+    .catch(error => {
+        console.error('Error al registrar el Service Worker:', error);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function(){
     const buscarInput = document.getElementById('buscarInput');
