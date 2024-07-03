@@ -1,18 +1,47 @@
-const archivosCache = [
+const archivosApp = [
     '/',
     '/index.html',
     '/favoritos.html',
     '/CSS/styles.css',
-    '/JavaScript/favoritos.js',
     '/JavaScript/main.js',
+    '/JavaScript/favoritos.js',
     '/JavaScript/sw.js',
-    '/Images',
-    '/manifest.json'
+    '/Images/icons',
+    '/Images/lupa.png',
+    '/Images/tienda.png',
+    '/manifest.json',
+    'https://dummyjson.com/products',
+    'https://kit.fontawesome.com/e21be378af.js'
 ];
 
+caches.open('productos-guardados');
+caches.delete('cache-contactos').then(res =>{
+    console.log(res);
+})
+caches.open('productos-guardados').then( cache =>{
+    cache.addAll([
+        '/',
+        '/index.html',
+        '/favoritos.html',
+        '/CSS/styles.css',
+        '/JavaScript/main.js',
+        '/JavaScript/favoritos.js',
+        '/JavaScript/sw.js',
+        '/Images/icons',
+        '/Images/lupa.png',
+        '/Images/tienda.png',
+        '/manifest.json',
+        'https://dummyjson.com/products',
+        'https://kit.fontawesome.com/e21be378af.js'
+    ])
+})
+caches.open('productos-guardados').then( cache =>{
+    cache.put('Styles.css', new Response('styles.css'))
+})
+
 self.addEventListener('install', evento => {
-    const cache = caches.open('cache-contactos').then( cache => {
-       return cache.addAll(archivosCache);
+    const cache = caches.open('productos-guardados').then( cache => {
+       return cache.addAll(archivosApp);
     });
     evento.waitUntil(cache);
 });
@@ -20,7 +49,7 @@ self.addEventListener('install', evento => {
 self.addEventListener('fetch', event => {
 
     const respuesta = fetch(event.request).then( respuestaNetwork => {
-        return caches.open( 'cache-contactos' ).then(  cache => {
+        return caches.open( 'productos-guardados' ).then(  cache => {
             cache.put(  event.request, respuestaNetwork.clone() );
             return respuestaNetwork;
         } )
@@ -33,10 +62,10 @@ self.addEventListener('fetch', event => {
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
-      caches.open('cache-contactos')
+      caches.open('productos-guardados')
         .then((cache) => {
           console.log('El caché funciona');
-          return cache.addAll(archivosCache);
+          return cache.addAll(archivosApp);
         })
         .catch((error) => {
           console.error('Error al almacenar en caché', error);

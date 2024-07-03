@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function(){
             if(data.products.length > 0){
                 listaProductos(data.products);
             }else{
-                mostrarProductos.innerHTML = '<p><strong>No se ha encontrado el producto.</strong></p>';
+                mostrarProductos.innerHTML = '<p style="font-size: 30px; text-align: center; font-weight: 700;"><strong>No se ha encontrado el producto.</strong></p>';
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            mostrarProductos.innerHTML = '<p>Ocurrió un error al realizar la búsqueda.</p>';
+            mostrarProductos.innerHTML = '<p style="font-size: 30px; text-align: center; font-weight: 700;">Ocurrió un error al realizar la búsqueda.</p>';
         });
     }
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         .catch(error => {
             console.error('Error:', error);
-            mostrarProductos.innerHTML = '<p>Ocurrió un error al cargar los productos iniciales.</p>';
+            mostrarProductos.innerHTML = '<p style="font-size: 30px; text-align: center; font-weight: 700;">Ocurrió un error al cargar los productos iniciales.</p>';
         });
     }
     
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
         })
         .catch(error => {
             console.error('Error:', error);
-            modalDetalles.innerHTML = '<p>Ocurrió un error al cargar los detalles del producto.</p>';
+            modalDetalles.innerHTML = '<p style="font-size: 30px; text-align: center; font-weight: 700;">Ocurrió un error al cargar los detalles del producto.</p>';
         });
     }
 
